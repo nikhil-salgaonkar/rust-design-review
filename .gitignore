@@ -1,0 +1,11 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Packaging artifacts (attach to GitHub Releases instead)
+*.skill
+
+# Editor
+.vscode/
+.idea/
+*.swp
