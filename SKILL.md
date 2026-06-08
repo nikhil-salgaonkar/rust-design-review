@@ -6,12 +6,12 @@ description: >
   pastes Rust code and asks for a review, design critique, pattern audit, or says things
   like "is this idiomatic?", "how would a Rust expert write this?", "review my Rust code",
   "what patterns am I missing?", "is this good Rust?", "do a design review", or "what am
-  I doing wrong in Rust?". Also trigger for any request to refactor Rust code for
-  correctness, ergonomics, or performance. Produces a structured review grounded in the
+  I doing wrong in Rust?". Also trigger for any request to refactor Rust code to be
+  more idiomatic or better structured. Produces a structured review grounded in the
   rust-unofficial/patterns book (https://rust-unofficial.github.io/patterns/).
 ---
 
-# Rust Idiomatic Design Review
+# Rust Design Review
 
 A structured review skill grounded in the [Rust Design Patterns book](https://rust-unofficial.github.io/patterns/)
 (rust-unofficial/patterns), covering idioms, design patterns, and anti-patterns.
@@ -55,7 +55,9 @@ Quick summary of what to scan for:
 
 Work through the **Patterns & Anti-patterns Checklist** (see `references/patterns.md`).
 
-Anti-patterns are **always 🔴 Must Fix**. Pattern opportunities are **🔵 Consider**.
+Anti-patterns default to **🔴 Must Fix** unless the surrounding context clearly
+justifies them (e.g. a deliberate clone in throwaway prototype code). Pattern
+opportunities are **🔵 Consider**.
 
 Key things to flag:
 
@@ -82,7 +84,7 @@ snippets), name the pattern from the book, and show the corrected version.
 ## Output Format
 
 ```
-## Rust Idiomatic Design Review
+## Rust Design Review
 
 ### Summary
 <2–3 sentence overall assessment. Note the biggest wins and the most critical issues.>
@@ -109,9 +111,10 @@ Omit any section that has no entries. Do not pad with generic praise.
 - `references/idioms.md` — Full idioms checklist with examples (read when doing the idiom scan)
 - `references/patterns.md` — Full patterns & anti-patterns catalogue (read when doing the audit)
 
-Read the relevant reference file before writing your first comment for that phase.
-For short snippets (<50 lines) you can work from memory of these checklists;
-for larger codebases always load the reference files first.
+The summary tables in Phases 2 and 3 are a quick index only; the reference files
+are authoritative. Always read the relevant reference file before writing your
+first comment for that phase, including for short snippets — relying on memory
+risks inventing rules that aren't in the book.
 
 ---
 
