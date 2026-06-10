@@ -40,7 +40,8 @@ Claude will activate this skill when you say things like:
 ## Installation
 
 1. Download `rust-design-review.skill` from the [Releases](../../releases) page.
-2. In Claude, open **Settings → Skills** and drag in the `.skill` file.
+2. Copy the `SKILL.md` file and `references/` folder to ~/.claude/skills/rust-design-review
+3. Alternatively, in Claude Desktop, open **Customize** and drag in the `.skill` file.
 
 ## File structure
 
